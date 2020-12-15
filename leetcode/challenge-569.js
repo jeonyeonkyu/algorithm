@@ -19,14 +19,14 @@ var maxDepth = function (root) {
   const resultArray = [];
   const maxIndex = (root, index) => {
     index++;
-    resultArray.push(index)
     if (root.right) {
-      maxIndex(root.right, index);
+      resultArray.push(maxIndex(root.right, index));
     }
     if (root.left) {
-      maxIndex(root.left, index);
+      resultArray.push(maxIndex(root.left, index));
     }
+    return index
   }
-  maxIndex(root, 0);
-  return Math.max(...resultArray);
+  resultArray.push(maxIndex(root, 0));
+  return Math.max(...resultArray)
 };
