@@ -1,3 +1,4 @@
+//https://programmers.co.kr/learn/courses/30/lessons/12981
 function solution(n, words) {
   const passedArray = [];
   let quizNumber = 0;
@@ -6,7 +7,7 @@ function solution(n, words) {
   for (let i = 0; i < words.length; i++) {
     const isSame = passedArray.some((element) => element === words[i]);
     passedArray.push(words[i]);
-    if (i >= 1 && lastAlphabet !== words[i].slice(0, 1) || isSame) {
+    if (i >= 1 && lastAlphabet !== words[i][0] || isSame) {
       quizNumber = i % n + 1
       quizOrder = Math.ceil(passedArray.length / n);
       break;
@@ -15,4 +16,3 @@ function solution(n, words) {
   }
   return [quizNumber, quizOrder];
 }
-
