@@ -1,11 +1,9 @@
+//https://programmers.co.kr/learn/courses/30/lessons/17683
 function solution(m, musicinfos) {
     var answer = '';
     let musicArray = musicinfos.map(word => word.split(','));
     m =  transactionStr(m);
-   
-    
     let resultArray = [];
-    
     musicArray.forEach(element => {
       let playTime = getPlayTime(element[0], element[1]); 
         element.shift();
