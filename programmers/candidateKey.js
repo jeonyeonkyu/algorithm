@@ -61,7 +61,6 @@ Set.prototype.isSuperset = function (subset) {
 
 function getMinimalityKeys(uniqueKeys) {
   const keys = [...uniqueKeys];
-  console.log(keys)
   for (let i = 0; i < keys.length - 1; i++) {
     for (let j = i + 1; j < keys.length; j++) {
       const set1 = new Set(keys[i]);
